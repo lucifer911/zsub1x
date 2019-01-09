@@ -26,7 +26,6 @@ error() {
 }
 
 # Get a new privatekey by going to console >> debug and typing smartnode genkey
-privatekey() { #TODO: add error detection
 	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
 	printf "Masternode GenKey: "
 	read _nodePrivateKey

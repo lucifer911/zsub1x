@@ -61,7 +61,7 @@ createconf() {
 	#TODO: Random generate the user and password
 
 	message "Creating chaincoin.conf..."
-	MNPRIVKEY="6FBUPijSGWWDrhbVPDBEoRuJ67WjLDpTEiY1h4wAvexVZH3HnV6"
+	MNPRIVKEY="877wrJqGdeLGZyaaSYisUFzwKnVHQt8rpPpPBb5M1pVEiALyeHG"
 	CONFDIR=~/.zsub1x
 	CONFILE=$CONFDIR/zsub1x.conf
 	if [ ! -d "$CONFDIR" ]; then mkdir $CONFDIR; fi

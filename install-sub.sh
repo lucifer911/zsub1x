@@ -1,4 +1,5 @@
 #!/bin/sh
+#Version 0.1.1.3
 #Info: Installs zsub1x daemon, Masternode based on privkey.
 #zsub1x
 #Tested OS: Ubuntu 16.04
@@ -100,3 +101,6 @@ install() {
 	success
 }
 
+#main
+#default to --without-gui
+install --without-gui

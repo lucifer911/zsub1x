@@ -36,7 +36,7 @@ cd
 # Changing the SSH Port to a custom number is a good security measure against DDOS attacks
 #printf "Custom SSH Port(Enter to ignore): "
 #read VARIABLE
-#_sshPortNumber=${VARIABLE:-22}
+_sshPortNumber=${VARIABLE:-22}
 
 # Get a new privatekey by going to console >> debug and typing masternode genkey
 printf "Masternode GenKey: "
@@ -86,22 +86,14 @@ sudo apt-get install software-properties-common -y
 sudo add-apt-repository ppa:bitcoin/bitcoin -y
 sudo apt-get update
 sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
-==================================
+
 # Install chaincoind 
-git clone https://github.com/chaincoin/chaincoin -b 0.16
-cd chaincoin #TODO: squash relative path
-echo "Preparing to build..."
-./autogen.sh
-if [ $? -ne 0 ]; then error; fi
-echo "Configuring build options..."
-./configure --disable-tests --without-miniupnpc CPPFLAGS=-fPIC 
-if [ $? -ne 0 ]; then error; fi
-echo "Building ChainCoin...this may take a few minutes..."
-make
-if [ $? -ne 0 ]; then error; fi
-echo "Installing ChainCoin..."
-sudo make install
-if [ $? -ne 0 ]; then error; fi
+sudo wget https://github.com/SuB1X-Coin/zSub1x/releases/download/v1.3.4/zsub1x-1.3.4-x86_64-linux.tar.gz
+sudo tar -xzvf zsub1x-1.3.4-x86_64-linux.tar.gz
+sudo mv zsub1x-cli /usr/local/bin/
+sudo mv zsub1xd /usr/local/bin/
+sudo mv zsub1x-qt /usr/local/bin/
+sudo rm -r zsub1x-1.3.4-x86_64-linux.tar.gz
 
 # Make a new directory for zsub1x daemon
 mkdir .zsub1x
@@ -125,85 +117,22 @@ addnode=sub1x.seeds.mn.zone
 ===================================
 # Create a directory for chcnode's cronjobs and the anti-ddos script
 cd
-rm -r chcnode
-mkdir chcnode
-
-# Change the directory to ~/chcnode/
-cd ~/chcnode/
-
-# Download the appropriate scripts
-wget https://raw.githubusercontent.com/chaoabunga/chcnode/master/makerun.sh
-wget https://raw.githubusercontent.com/chaoabunga/chcnode/master/checkdaemon.sh
-#wget https://raw.githubusercontent.com/chaoabunga/chcnode/master/upgrade.sh
-wget https://raw.githubusercontent.com/chaoabunga/chcnode/master/clearlog.sh
-
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-
-# Create a cronjob for making sure smartcashd runs after reboot
-if ! crontab -l | grep "@reboot chaincoind"; then
-  (crontab -l ; echo "@reboot chaincoind") | crontab -
-fi
-
-# Create a cronjob for making sure smartcashd is always running
-if ! crontab -l | grep "~/chcnode/makerun.sh"; then
-  (crontab -l ; echo "*/5 * * * * ~/chcnode/makerun.sh") | crontab -
-fi
-
-# Create a cronjob for making sure the daemon is never stuck
-if ! crontab -l | grep "~/chcnode/checkdaemon.sh"; then
-  (crontab -l ; echo "*/30 * * * * ~/chcnode/checkdaemon.sh") | crontab -
-fi
-
-# Create a cronjob for making sure the daemon is never stuck
-if ! crontab -l | grep "* * * * * cd /root/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1"; then
-  (crontab -l ; echo "* * * * * cd /root/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1") | crontab -
-fi
-
-
-# Create a cronjob for making sure smartcashd is always up-to-date
-# not working for chc
-#if ! crontab -l | grep "~/chcnode/upgrade.sh"; then
-#  (crontab -l ; echo "0 0 */1 * * ~/chcnode/upgrade.sh") | crontab -
-#fi
-
-
-#Install sentinel
-sudo apt-get update
-sudo apt-get -y install python-virtualenv
-sudo apt install virtualenv -y
-cd ~
-git clone https://github.com/chaincoin/sentinel.git && cd sentinel
-virtualenv ./venv
-virtualenv ./venv && ./venv/bin/pip install -r requirements.txt
-echo "chaincoin_conf=/root/.chaincoincore/chaincoin.conf" >> sentinel.conf
-
-# Create a cronjob for clearing the log file
-if ! crontab -l | grep "~/chcnode/clearlog.sh"; then
-  (crontab -l ; echo "0 0 */2 * * ~/chcnode/clearlog.sh") | crontab -
-fi
-
-# Give execute permission to the cron scripts
-chmod 0700 ./makerun.sh
-chmod 0700 ./checkdaemon.sh
-#chmod 0700 ./upgrade.sh
-chmod 0700 ./clearlog.sh
 
 # Change the SSH port
 #sed -i "s/[#]\{0,1\}[ ]\{0,1\}Port [0-9]\{2,\}/Port ${_sshPortNumber}/g" /etc/ssh/sshd_config
 
 # Firewall security measures
 
-#apt install ufw -y
-#ufw disable
-#ufw allow 9678
-#ufw allow "$_sshPortNumber"/tcp
-#ufw limit "$_sshPortNumber"/tcp
-#ufw logging on
-#ufw default deny incoming
-#ufw default allow outgoing
-#ufw --force enable
+apt install ufw -y
+ufw disable
+ufw allow 7521
+ufw allow "$_sshPortNumber"/tcp
+ufw limit "$_sshPortNumber"/tcp
+ufw logging on
+ufw default deny incoming
+ufw default allow outgoing
+ufw --force enable
 
-chaincoind
-echo "SUCCESS! Your chaincoind has started. Your local masternode.conf entry is below..."
+zsub1xd
+echo "SUCCESS! Your zsub1x has started. Your local masternode.conf entry is below..."
 echo "MN ${_nodeIpAddress}:11994 ${_nodePrivateKey} TXHASH INDEX"

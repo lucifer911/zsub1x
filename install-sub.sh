@@ -37,13 +37,15 @@ prepdependencies() { #TODO: add error detection
 	
 createswap() { #TODO: add error detection
 	message "Creating 2GB temporary swap file...this may take a few minutes..."
-	sudo dd if=/dev/zero of=/swapfile bs=1M count=2000
-	sudo mkswap /swapfile
-	sudo chown root:root /swapfile
-	sudo chmod 0600 /swapfile
-	sudo swapon /swapfile
-	#make swap permanent
-	sudo echo "/swapfile none swap sw 0 0" >> /etc/fstab
+	cd /var
+	sudo touch swap.img
+	sudo chmod 600 swap.img
+	sudo dd if=/dev/zero of=/var/swap.img bs=1024k count=2000
+	sudo mkswap /var/swap.img
+	sudo swapon /var/swap.img
+	sudo free
+	sudo echo "/var/swap.img none swap sw 0 0" >> /etc/fstab
+	cd
 }
 
 

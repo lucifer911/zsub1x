@@ -2,7 +2,6 @@
 #Info: Installs zsub1x daemon, Masternode based on privkey.
 #zsub1x
 #Tested OS: Ubuntu 16.04
-#TODO: add specific dependencies depending on build option (i.e. gui requires QT4)
 
 noflags() {
 	echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"

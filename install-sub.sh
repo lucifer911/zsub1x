@@ -46,6 +46,7 @@ createswap() { #TODO: add error detection
 	sudo free
 	sudo echo "/var/swap.img none swap sw 0 0" >> /etc/fstab
 	cd
+	cd
 }
 
 
@@ -97,7 +98,7 @@ success() {
 install() {
 	prepdependencies
 	createswap
-	clonerepo
+	installwallet
 	compile $1
 	createconf
 	success

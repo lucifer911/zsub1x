@@ -5,7 +5,9 @@ Tested Systems:
 -Ubuntu 16.04
 
 System will spitout genkey
+
+use the following line to install the 1 liner
+
 curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/install-sub.sh | bash
-(SocialSend) (New! Website, shorter 1-liner, send.nodes.mn)
-curl send.nodes.mn/install.sh | bash
-curl https://raw.githubusercontent.com/lucifer911/zsub1x/blob/master/install-sub.sh
+
+

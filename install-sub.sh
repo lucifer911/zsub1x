@@ -24,6 +24,13 @@ error() {
 	message "An error occured, you must fix it to continue!"
 	exit 1
 }
+
+# Get a new privatekey by going to console >> debug and typing smartnode genkey
+privatekey() { #TODO: add error detection
+	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
+	printf "Masternode GenKey: "
+	read _nodePrivateKey
+}
 	
 prepdependencies() { #TODO: add error detection
 	message "Installing dependencies..."
@@ -65,7 +72,6 @@ createconf() {
 	#TODO: Random generate the user and password
 
 	message "Creating chaincoin.conf..."
-	MNPRIVKEY="877wrJqGdeLGZyaaSYisUFzwKnVHQt8rpPpPBb5M1pVEiALyeHG"
 	CONFDIR=~/.zsub1x
 	CONFILE=$CONFDIR/zsub1x.conf
 	if [ ! -d "$CONFDIR" ]; then mkdir $CONFDIR; fi
@@ -73,7 +79,7 @@ createconf() {
 	mnip=$(curl -s https://api.ipify.org)
 	rpcuser=$(date +%s | sha256sum | base64 | head -c 10 ; echo)
 	rpcpass=$(openssl rand -base64 32)
-	printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "masternodeaddr=$mnip:5721" "addnode=sub1x.seeds.mn.zone" > $CONFILE
+	printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=${_nodePrivateKey}" "masternodeaddr=$mnip:5721" "addnode=sub1x.seeds.mn.zone" > $CONFILE
        
         zsub1xd
         message "Wait 10 seconds for daemon to load..."
@@ -84,7 +90,7 @@ createconf() {
         sleep 10s
 		sudo rm $CONFILE
 		message "Updating chaincoin.conf..."
-        printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "masternodeaddr=$mnip:5721" "addnode=sub1x.seeds.mn.zone" > $CONFILE
+        printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=${_nodePrivateKey}" "masternodeaddr=$mnip:5721" "addnode=sub1x.seeds.mn.zone" > $CONFILE
 
 }
 

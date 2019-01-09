@@ -8,6 +8,6 @@ System will ask you for genkey
 
 use the following line to install the 1 liner
 
-curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/install-sub.sh | bash
+curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/install.sh | bash
 
 I am not a delevpor. All credit go to Chaoabunga. His github is https://github.com/chaoabunga

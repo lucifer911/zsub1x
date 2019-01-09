@@ -47,14 +47,14 @@ createswap() { #TODO: add error detection
 }
 
 
-Install wallet () { #TODO: add error detection 
+Install wallet () { #TODO: add error detection
 	wget https://github.com/SuB1X-Coin/zSub1x/releases/download/v1.3.4/zsub1x-1.3.4-x86_64-linux.tar.gz
 	sudo tar -xzvf zsub1x-1.3.4-x86_64-linux.tar.gz
 	mv zsub1x-cli /usr/local/bin/
 	mv zsub1xd /usr/local/bin/
 	mv zsub1x-qt /usr/local/bin/
 	rm -r zsub1x-1.3.4-x86_64-linux.tar.gz
-	
+}	
 
 createconf() {
 	#TODO: Can check for flag and skip this

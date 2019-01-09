@@ -2,6 +2,8 @@
 #Info: Installs zsub1x daemon, Masternode based on privkey.
 #zsub1x
 #Tested OS: Ubuntu 16.04
+#All the credit to Chaobunga
+
 
 noflags() {
 	echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"

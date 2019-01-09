@@ -78,8 +78,8 @@ createconf() {
         zsub1xd
         message "Wait 10 seconds for daemon to load..."
         sleep 20s
-        MNPRIVKEY=$(chaincoin-cli masternode genkey)
-		chaincoin-cli stop
+        MNPRIVKEY=$(zsub1x-cli masternode genkey)
+		zsub1x-cli stop
 		message "wait 10 seconds for deamon to stop..."
         sleep 10s
 		sudo rm $CONFILE
@@ -99,7 +99,6 @@ install() {
 	prepdependencies
 	createswap
 	installwallet
-	compile $1
 	createconf
 	success
 }

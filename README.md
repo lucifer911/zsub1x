@@ -8,4 +8,4 @@ System will spitout genkey
 curl https://raw.githubusercontent.com/chaoabunga/mnscripts/master/install-chc.sh | bash
 (SocialSend) (New! Website, shorter 1-liner, send.nodes.mn)
 curl send.nodes.mn/install.sh | bash
-curl https://raw.github.com/lucifer911/zsub1x/blob/master/install-sub.sh
+curl https://raw.githubusercontent.com/lucifer911/zsub1x/blob/master/install-sub.sh

@@ -4,7 +4,7 @@ Tested Systems:
 
 -Ubuntu 16.04
 
-System will spitout genkey
+System will ask you for genkey
 
 use the following line to install the 1 liner
 

@@ -32,9 +32,8 @@ I am not a developer. All credit go to Chaoabunga.I use his structure and change
 
 New setup.
 
-wget https://rawgit.com/lucifer911/zsub1x/blob/master/install-sub.sh
 
-wget https://github.com/lucifer911/zsub1x/blob/master/install-sub.sh
+wget https://raw.githubusercontent.com/lucifer911/zsub1x/master/install-sub.sh
 
 bash ./install-sub.sh
 

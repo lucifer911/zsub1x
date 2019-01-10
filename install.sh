@@ -39,8 +39,10 @@ cd
 _sshPortNumber=${VARIABLE:-22}
 
 # Get a new privatekey by going to console >> debug and typing masternode genkey
-printf "Masternode GenKey: "
+echo "please enter you private key"
 read _nodePrivateKey
+#printf "Masternode GenKey: "
+#read _nodePrivateKey
 
 # The RPC node will only accept connections from your localhost
 _rpcUserName=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 12 ; echo '')
@@ -114,7 +116,7 @@ masternode=1
 masternodeprivkey=${_nodePrivateKey}
 addnode=sub1x.seeds.mn.zone
 " > zsub1x.conf
-===================================
+
 # Create a directory for chcnode's cronjobs and the anti-ddos script
 cd
 

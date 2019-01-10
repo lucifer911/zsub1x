@@ -17,8 +17,8 @@ _rpcPassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 ; echo '')
 _nodeIpAddress=$(ip route get 1 | awk '{print $NF;exit}')
 
 # Make a new directory for chaincoin daemon
-mkdir ~/.chaincoincore/
-touch ~/.chaincoincore/chaincoin.conf
+mkdir ~/.1/
+touch ~/.1/1.conf
 
 # Change the directory to ~/.chaincoin
 cd ~/.chaincoincore/

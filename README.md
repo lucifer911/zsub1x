@@ -4,12 +4,20 @@ Tested Systems:
 
 -Ubuntu 16.04
 
-System will ask you for genkey
-
-use the following line to install the 1 liner
+use the following line to install the 1 liner. 
 
 curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/install.sh | bash
 
-I am not a delevpor. All credit go to Chaoabunga. His github is https://github.com/chaoabunga
+After script is done. you need to do the following.
 
-curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/1test.sh | bash
+zsub1x-cli stop
+
+cd .zsub1x
+
+nano zsub1x.conf 
+
+enter your privkey, save the file by "control X" then hit "Y" and then hit enter.
+
+start the deamon by zsub1xd
+
+I am not a developer. All credit go to Chaoabunga.I use his structure and change the codes to my needs. His github is https://github.com/chaoabunga

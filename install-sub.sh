@@ -98,12 +98,9 @@ createconf() {
 
 }
 
-success() {
-	zsub1xd
-	message "SUCCESS! Your zsub1x has started. Masternode.conf setting below..."
-	message "MN $mnip:5721 $MNPRIVKEY TXHASH INDEX"
-	exit 0
-}
+#success() {
+	
+#}
 
 install() {
 	privatekey
@@ -111,9 +108,13 @@ install() {
 	createswap
 	installwallet
 	createconf
-	success
+	#success
 }
 
 #main
 #default to --without-gui
 install --without-gui
+zsub1xd
+message "SUCCESS! Your zsub1x has started. Masternode.conf setting below..."
+message "MN $mnip:5721 $MNPRIVKEY TXHASH INDEX"
+exit 0

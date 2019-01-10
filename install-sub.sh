@@ -79,7 +79,7 @@ createconf() {
 	mnip=$(curl -s https://api.ipify.org)
 	rpcuser=$(date +%s | sha256sum | base64 | head -c 10 ; echo)
 	rpcpass=$(openssl rand -base64 32)
-	printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "masternodeaddr=$mnip:5721" "addnode=sub1x.seeds.mn.zone" > $CONFILE
+	printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "externalip=$mnip:5721" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "addnode=sub1x.seeds.mn.zone" > $CONFILE
        
         zsub1xd
         message "Wait 10 seconds for daemon to load..."
@@ -90,7 +90,7 @@ createconf() {
         sleep 10s
 		sudo rm $CONFILE
 		message "Updating chaincoin.conf..."
-        printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "masternodeaddr=$mnip:5721" "addnode=sub1x.seeds.mn.zone" > $CONFILE
+        printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "externalip=$mnip:5721" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "addnode=sub1x.seeds.mn.zone" > $CONFILE
 
 }
 
@@ -113,7 +113,3 @@ install() {
 #main
 #default to --without-gui
 install --without-gui
-
-	echo
-	echo "Installation is finish. Edit your conf file"
-	echo

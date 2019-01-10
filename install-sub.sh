@@ -115,5 +115,5 @@ install() {
 
 #main
 #default to --without-gui
-read -rsp "read test" MNPRIVTEST
+read -r -p "read test" lowcase
 install --without-gui

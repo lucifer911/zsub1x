@@ -26,10 +26,11 @@ error() {
 }
 
 
-privatekey () { #T)DO: Get a new privatekey by going to console >> debug and typing smartnode genkey
+privatekey() { #TODO: add error detection
 	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
-	printf "Masternode GenKey: "
-	read _nodePrivateKey
+	#printf "Masternode GenKey: "
+	#read _nodePrivateKey
+	read -p "enter you priv key" MNPRIVKEY 
 }
 	
 prepdependencies() { #TODO: add error detection

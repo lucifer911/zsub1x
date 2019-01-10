@@ -29,8 +29,16 @@ error() {
 # Get a new privatekey by going to console >> debug and typing smartnode genkey
 pvkey() { #TODO: get pvkey
 	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
-	printf "Masternode GenKey: "
-	read _nodePrivateKey
+	#printf "Masternode GenKey: "
+	#read _nodePrivateKey
+	read -p "Enter server names separated by 'space' : " input
+
+	for i in ${input[@]}
+	do
+  	 echo ""
+  	 echo "User entered value :"$i    # or do whatever with individual element of the array
+  	 echo ""
+	done
 }
 
 createconf() {

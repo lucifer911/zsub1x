@@ -3,9 +3,12 @@
 # Installs smartnode on Ubuntu 16.04 LTS x64
 # ATTENTION: The anti-ddos part will disable http, https and dns ports.
 
-# Get a new privatekey by going to console >> debug and typing smartnode genkey
-printf "Masternode GenKey: "
+echo "enter your private key"
 read _nodePrivateKey
+
+# Get a new privatekey by going to console >> debug and typing smartnode genkey
+# printf "Masternode GenKey: "
+# read _nodePrivateKey
 
 # The RPC node will only accept connections from your localhost
 _rpcUserName=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 12 ; echo '')

@@ -20,4 +20,12 @@ enter your privkey, save the file by "control X" then hit "Y" and then hit enter
 
 start the deamon by zsub1xd
 
+# Local wallet
+
+Once the script is done It will spit out a line that you need to enter into your masternode.conf file of your local wallet.
+
+MN-label VpsIpAddress:5721 Privatekey Taxid index
+
+Change it according to your needs, save the file and restart the wallet. Once wallet is started and fully sync then you can start you MN form masternode tab.
+
 I am not a developer. All credit go to Chaoabunga.I use his structure and change the codes to my needs. His github is https://github.com/chaoabunga

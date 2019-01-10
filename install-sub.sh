@@ -25,11 +25,11 @@ error() {
 	exit 1
 }
 
-privatekey () { #T)DO: Get a new privatekey by going to console >> debug and typing smartnode genkey
-	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
-	printf "Masternode GenKey: "
-	read _nodePrivateKey
-}
+#privatekey () { #T)DO: Get a new privatekey by going to console >> debug and typing smartnode genkey
+#	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
+#	printf "Masternode GenKey: "
+#	read _nodePrivateKey
+#}
 	
 prepdependencies() { #TODO: add error detection
 	message "Installing dependencies..."
@@ -83,7 +83,7 @@ createconf() {
         zsub1xd
         message "Wait 10 seconds for daemon to load..."
         sleep 20s
-        MNPRIVKEY="87TUnj1Mzte4N2Yo7rLQE3f2MzW6p9tuTWeZ1TCEnHCUZMCPwmu"
+        MNPRIVKEY="privkey"
 		zsub1x-cli stop
 		message "wait 10 seconds for deamon to stop..."
         sleep 10s
@@ -96,7 +96,7 @@ createconf() {
 success() {
 	zsub1xd
 	message "SUCCESS! Your zsub1x has started. Masternode.conf setting below..."
-	message "MN $mnip:5721 $MNPRIVKEY TXHASH INDEX"
+	message "MN $mnip:5721 MNPRIVKEY TXHASH INDEX"
 	exit 0
 }
 

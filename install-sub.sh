@@ -30,7 +30,7 @@ privatekey() { #TODO: add error detection
 	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
 	printf "Masternode GenKey: "
 	read MNPRIVKEY
-	echo "privatekey function: $MNPRIVKEY"
+	echo "privatekey: $MNPRIVKEY"
 	#read -p "enter you priv key" MNPRIVKEY 
 }
 	

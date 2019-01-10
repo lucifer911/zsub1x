@@ -36,7 +36,7 @@ Now copy .zsub1x over to new user
 
 > cp -R /root/.zsub1x /home/sub1
 
-grand owner permission to that folder
+Grand owner permission to that folder
 
 > shown -R sub1:sub1 /home/sub1
 
@@ -75,5 +75,7 @@ You can to top to see if both processer running.
 #good luch.
 
 donations are always welcome.
+
 BTC :
+
 zsub1x :

@@ -3,22 +3,13 @@
 Tested Systems:
 
 -Ubuntu 16.04
+To install run the following commands
 
-use the following line to install the 1 liner. 
+wget https://raw.githubusercontent.com/lucifer911/zsub1x/master/install-sub.sh
 
-curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/install-sub.sh | bash
+bash ./install-sub.sh
 
-After script is done. you need to do the following.
-
-zsub1x-cli stop
-
-cd .zsub1x
-
-nano zsub1x.conf 
-
-enter your privkey, save the file by "control X" then hit "Y" and then hit enter.
-
-start the deamon by zsub1xd
+rm -r install-sub.sh
 
 # Local wallet
 
@@ -29,11 +20,3 @@ MN-label VpsIpAddress:5721 Privatekey Taxid index
 Change it according to your needs, save the file and restart the wallet. Once wallet is started and fully sync then you can start you MN form masternode tab.
 
 I am not a developer. All credit go to Chaoabunga.I use his structure and change the codes to my needs. His github is https://github.com/chaoabunga
-
-New setup.
-
-
-wget https://raw.githubusercontent.com/lucifer911/zsub1x/master/install-sub.sh
-
-bash ./install-sub.sh
-

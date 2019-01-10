@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #Version 0.1.1.3
 #Info: Installs zsub1x daemon, Masternode based on privkey.
 #zsub1x

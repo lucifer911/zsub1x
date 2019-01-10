@@ -4,7 +4,7 @@
 #zsub1x
 #Tested OS: Ubuntu 16.04
 #All the credit to Chaobunga
-
+MNPRIVKEY="default"
 
 noflags() {
 	echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
@@ -107,7 +107,7 @@ success() {
 
 install() {
 	privatekey
-	echo "$MNPRIVKEY"
+	echo "Install function $MNPRIVKEY"
 	prepdependencies
 	createswap
 	installwallet

@@ -34,5 +34,7 @@ New setup.
 
 wget https://rawgit.com/lucifer911/zsub1x/blob/master/install-sub.sh
 
-bash ./install.sh
+wget https://github.com/lucifer911/zsub1x/blob/master/install-sub.sh
+
+bash ./install-sub.sh
 

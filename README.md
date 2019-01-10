@@ -29,3 +29,9 @@ MN-label VpsIpAddress:5721 Privatekey Taxid index
 Change it according to your needs, save the file and restart the wallet. Once wallet is started and fully sync then you can start you MN form masternode tab.
 
 I am not a developer. All credit go to Chaoabunga.I use his structure and change the codes to my needs. His github is https://github.com/chaoabunga
+
+New setup.
+
+wget https://rawgit.com/lucifer911/zsub1x/blob/master/install-sub.sh
+bash ./install.sh
+

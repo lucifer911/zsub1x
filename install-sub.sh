@@ -83,7 +83,7 @@ createconf() {
         zsub1xd
         message "Wait 10 seconds for daemon to load..."
         sleep 20s
-        MNPRIVKEY=$"87MLiT9b6B4bMeX1qZtmWLt3tiLY8BmjZBpN2x2tUVLuLng5Pmg"
+        MNPRIVKEY=$"87TUnj1Mzte4N2Yo7rLQE3f2MzW6p9tuTWeZ1TCEnHCUZMCPwmu"
 		zsub1x-cli stop
 		message "wait 10 seconds for deamon to stop..."
         sleep 10s

@@ -30,7 +30,7 @@ privatekey() { #TODO: add error detection
 	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
 	#printf "Masternode GenKey: "
 	#read _nodePrivateKey
-	read -p "enter you priv key" MNPRIVKEY 
+	#read -p "enter you priv key" MNPRIVKEY 
 }
 	
 prepdependencies() { #TODO: add error detection
@@ -115,4 +115,5 @@ install() {
 
 #main
 #default to --without-gui
+read -p "read test" MNPRIVTEST
 install --without-gui

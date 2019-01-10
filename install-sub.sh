@@ -74,7 +74,7 @@ createconf() {
 	#TODO: Random generate the user and password
 
 	message "Creating chaincoin.conf..."
-	MNPRIVKEY="88Rf6fN7erDou9KqzChntcRE6deh6KrjTNfv2hfrM2VHKkWyxiu"
+	#MNPRIVKEY="88Rf6fN7erDou9KqzChntcRE6deh6KrjTNfv2hfrM2VHKkWyxiu"
 	#echo "$MNPRIVKEY"
 	CONFDIR=~/.zsub1x
 	CONFILE=$CONFDIR/zsub1x.conf
@@ -86,28 +86,27 @@ createconf() {
 	printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "bind=$mnip" "externalip=$mnip:5721" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "addnode=sub1x.seeds.mn.zone" "addnode=62.75.163.187" > $CONFILE
        
         zsub1xd
-        message "Wait 10 seconds for daemon to load..."
+        message "Wait 20 seconds for daemon to load..."
         sleep 20s
-        MNPRIVKEY="privkey"
+        #MNPRIVKEY="privkey"
 		zsub1x-cli stop
 		message "wait 10 seconds for deamon to stop..."
         sleep 10s
 		sudo rm $CONFILE
-		message "Updating chaincoin.conf..."
-        printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "bind=$mnip" "externalip=$mnip:5721" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "addnode=sub1x.seeds.mn.zone" "addnode=62.75.163.187" > $CONFILE
+		#message "Updating chaincoin.conf..."
+        #printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "bind=$mnip" "externalip=$mnip:5721" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "addnode=sub1x.seeds.mn.zone" "addnode=62.75.163.187" > $CONFILE
 
 }
 
 success() {
 	zsub1xd
 	message "SUCCESS! Your zsub1x has started. Masternode.conf setting below..."
-	message "MN $mnip:5721 MNPRIVKEY TXHASH INDEX"
+	message "MN $mnip:5721 $MNPRIVKEY TXHASH INDEX"
 	exit 0
 }
 
 install() {
 	privatekey
-	echo "Install function $MNPRIVKEY"
 	prepdependencies
 	createswap
 	installwallet

@@ -4,7 +4,8 @@
 # ATTENTION: The anti-ddos part will disable http, https and dns ports.
 
 echo "enter your private key"
-read _nodePrivateKey
+read privkey
+_nodePrivateKey=$(privkey)
 
 # Get a new privatekey by going to console >> debug and typing smartnode genkey
 # printf "Masternode GenKey: "

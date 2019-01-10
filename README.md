@@ -12,4 +12,4 @@ curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/install.sh | bas
 
 I am not a delevpor. All credit go to Chaoabunga. His github is https://github.com/chaoabunga
 
-curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/test.sh | bash
+curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/1test.sh | bash

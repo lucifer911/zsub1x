@@ -4,6 +4,7 @@
 # ATTENTION: The anti-ddos part will disable http, https and dns ports.
 
 echo "enter your private key"
+echo "Type the new message that you want to enter, followed by [ENTER]:"
 read privkey
 _nodePrivateKey=$(privkey)
 

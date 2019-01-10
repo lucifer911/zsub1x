@@ -6,7 +6,7 @@ Tested Systems:
 
 use the following line to install the 1 liner. 
 
-curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/install.sh | bash
+curl https://raw.githubusercontent.com/lucifer911/zsub1x/master/install-sub.sh | bash
 
 After script is done. you need to do the following.
 

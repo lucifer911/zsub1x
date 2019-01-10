@@ -83,7 +83,7 @@ createconf() {
         zsub1xd
         message "Wait 10 seconds for daemon to load..."
         sleep 20s
-        MNPRIVKEY=$(zsub1x-cli masternode genkey)
+        MNPRIVKEY=$(87MLiT9b6B4bMeX1qZtmWLt3tiLY8BmjZBpN2x2tUVLuLng5Pmg)
 		zsub1x-cli stop
 		message "wait 10 seconds for deamon to stop..."
         sleep 10s

@@ -4,7 +4,7 @@ Tested Systems:
 
 -Ubuntu 16.04
 
-To install run the following commands
+To install run the following commands. It will ask you to enter your private key.
 
 wget https://raw.githubusercontent.com/lucifer911/zsub1x/master/install-sub.sh
 

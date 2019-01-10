@@ -41,3 +41,13 @@ cd
 # Get a new privatekey by going to console >> debug and typing smartnode genkey
 printf "Masternode GenKey: "
 read _nodePrivateKey
+
+
+# The RPC node will only accept connections from your localhost
+_rpcUserName=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 12 ; echo '')
+
+# Choose a random and secure password for the RPC
+_rpcPassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 ; echo '')
+
+# Get the IP address of your vps which will be hosting the smartnode
+_nodeIpAddress=$(ip route get 1 | awk '{print $NF;exit}')

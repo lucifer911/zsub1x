@@ -55,17 +55,7 @@ createconf() {
 	rpcpass=$(openssl rand -base64 32)
 	printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=${_nodePrivateKey}" "masternodeaddr=$mnip:5721" "addnode=sub1x.seeds.mn.zone" > $CONFILE
        
-        zsub1xd
-        message "Wait 10 seconds for daemon to load..."
-        sleep 20s
-        MNPRIVKEY=$(zsub1x-cli masternode genkey)
-		zsub1x-cli stop
-		message "wait 10 seconds for deamon to stop..."
-        sleep 10s
-		sudo rm $CONFILE
-		message "Updating chaincoin.conf..."
-        printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=${_nodePrivateKey}" "masternodeaddr=$mnip:5721" "addnode=sub1x.seeds.mn.zone" > $CONFILE
-
+     
 }
 
 install() {

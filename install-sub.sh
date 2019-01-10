@@ -106,6 +106,7 @@ success() {
 
 install() {
 	privatekey
+	echo "$MNPRIVKEY"
 	prepdependencies
 	createswap
 	installwallet

@@ -21,7 +21,7 @@ mkdir ~/.1/
 touch ~/.1/1.conf
 
 # Change the directory to ~/.chaincoin
-cd ~/.chaincoincore/
+cd ~/.1/
 
 # Create the initial chaincoin.conf file
 echo "rpcuser=${_rpcUserName}

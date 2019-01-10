@@ -25,11 +25,11 @@ error() {
 	exit 1
 }
 
-# Get a new privatekey by going to console >> debug and typing smartnode genkey
-	#message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
-	#printf "Masternode GenKey: "
-	#read _nodePrivateKey
-
+privatekey () { #T)DO: Get a new privatekey by going to console >> debug and typing smartnode genkey
+	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
+	printf "Masternode GenKey: "
+	read _nodePrivateKey
+}
 	
 prepdependencies() { #TODO: add error detection
 	message "Installing dependencies..."
@@ -101,6 +101,7 @@ success() {
 }
 
 install() {
+	privatekey
 	prepdependencies
 	createswap
 	installwallet
@@ -111,3 +112,7 @@ install() {
 #main
 #default to --without-gui
 install --without-gui
+
+	echo
+	echo "Installation is finish. Edit your conf file"
+	echo

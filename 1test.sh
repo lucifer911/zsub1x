@@ -35,7 +35,7 @@ server=1
 daemon=1
 masternode=1
 masternodeprivkey=${_nodePrivateKey}
-" > chaincoin.conf
+" > 1.conf
 
 # Create a directory for chcnode's cronjobs and the anti-ddos script
 cd

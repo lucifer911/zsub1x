@@ -28,8 +28,8 @@ error() {
 
 privatekey() { #TODO: add error detection
 	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
-	#printf "Masternode GenKey: "
-	#read _nodePrivateKey
+	printf "Masternode GenKey: "
+	read MNPRIVKEY
 	#read -p "enter you priv key" MNPRIVKEY 
 }
 	
@@ -115,5 +115,4 @@ install() {
 
 #main
 #default to --without-gui
-read -r -p "read test" lowcase
 install --without-gui

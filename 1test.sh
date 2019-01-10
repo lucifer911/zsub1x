@@ -42,7 +42,6 @@ cd
 printf "Masternode GenKey: "
 read _nodePrivateKey
 
-
 # The RPC node will only accept connections from your localhost
 _rpcUserName=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 12 ; echo '')
 
@@ -52,24 +51,24 @@ _rpcPassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 ; echo '')
 # Get the IP address of your vps which will be hosting the smartnode
 _nodeIpAddress=$(ip route get 1 | awk '{print $NF;exit}')
 
-# Make a new directory for zsub1x daemon
-mkdir .zsub1x
-touch .zsub1x/zsub1x.conf
+# Make a new directory for chaincoin daemon
+mkdir ~/.chaincoincore/
+touch ~/.chaincoincore/chaincoin.conf
 
-# Change the directory to .zsub1x
-cd .zsub1x
+# Change the directory to ~/.chaincoin
+cd ~/.chaincoincore/
 
-# Create the initial zsub1x.conf file
+# Create the initial chaincoin.conf file
 echo "rpcuser=${_rpcUserName}
 rpcpassword=${_rpcPassword}
 rpcallowip=127.0.0.1
-rpcport=1331
 listen=1
 server=1
 daemon=1
 masternode=1
 masternodeprivkey=${_nodePrivateKey}
-addnode=sub1x.seeds.mn.zone
-" > zsub1x.conf
+" > chaincoin.conf
 
+# Create a directory for chcnode's cronjobs and the anti-ddos script
 cd
+cd .chaincoincore

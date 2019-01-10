@@ -51,3 +51,32 @@ _rpcPassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 ; echo '')
 
 # Get the IP address of your vps which will be hosting the smartnode
 _nodeIpAddress=$(ip route get 1 | awk '{print $NF;exit}')
+
+sudo wget https://github.com/SuB1X-Coin/zSub1x/releases/download/v1.3.4/zsub1x-1.3.4-x86_64-linux.tar.gz
+sudo tar -xzvf zsub1x-1.3.4-x86_64-linux.tar.gz
+sudo mv zsub1x-cli /usr/local/bin/
+sudo mv zsub1xd /usr/local/bin/
+sudo mv zsub1x-qt /usr/local/bin/
+sudo rm -r zsub1x-1.3.4-x86_64-linux.tar.gz
+
+# Make a new directory for zsub1x daemon
+mkdir .zsub1x
+touch .zsub1x/zsub1x.conf
+
+# Change the directory to .zsub1x
+cd .zsub1x
+
+# Create the initial zsub1x.conf file
+echo "rpcuser=${_rpcUserName}
+rpcpassword=${_rpcPassword}
+rpcallowip=127.0.0.1
+rpcport=1331
+listen=1
+server=1
+daemon=1
+masternode=1
+masternodeprivkey=${_nodePrivateKey}
+addnode=sub1x.seeds.mn.zone
+" > zsub1x.conf
+
+cd

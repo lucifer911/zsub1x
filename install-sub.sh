@@ -88,19 +88,22 @@ createconf() {
         zsub1xd
         message "Wait 20 seconds for daemon to load..."
         sleep 20s
-        #MNPRIVKEY="privkey"
+        MNPRIVKEY="$MNPRIVKEY"
 		zsub1x-cli stop
 		message "wait 10 seconds for deamon to stop..."
         sleep 10s
 		sudo rm $CONFILE
-		#message "Updating chaincoin.conf..."
-        #printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "bind=$mnip" "externalip=$mnip:5721" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "addnode=sub1x.seeds.mn.zone" "addnode=62.75.163.187" > $CONFILE
+		message "Updating chaincoin.conf..."
+        printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "rpcport=1331" "listen=1" "server=1" "daemon=1" "maxconnections=256" "bind=$mnip" "externalip=$mnip:5721" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "addnode=sub1x.seeds.mn.zone" "addnode=62.75.163.187" > $CONFILE
 
 }
 
-#success() {
-	
-#}
+success() {
+	zsub1xd
+	message "SUCCESS! Your zsub1x has started. Masternode.conf setting below..."
+	message "MN $mnip:5721 $MNPRIVKEY TXHASH INDEX"
+	exit 0	
+}
 
 install() {
 	privatekey
@@ -108,13 +111,10 @@ install() {
 	createswap
 	installwallet
 	createconf
-	#success
+	success
 }
 
 #main
 #default to --without-gui
 install --without-gui
 zsub1xd
-message "SUCCESS! Your zsub1x has started. Masternode.conf setting below..."
-message "MN $mnip:5721 $MNPRIVKEY TXHASH INDEX"
-exit 0

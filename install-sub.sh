@@ -25,11 +25,12 @@ error() {
 	exit 1
 }
 
-#privatekey () { #T)DO: Get a new privatekey by going to console >> debug and typing smartnode genkey
-#	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
-#	printf "Masternode GenKey: "
-#	read _nodePrivateKey
-#}
+
+privatekey () { #T)DO: Get a new privatekey by going to console >> debug and typing smartnode genkey
+	message "Get a new privatekey by going to console >> debug and typing smartnode genkey"
+	printf "Masternode GenKey: "
+	read _nodePrivateKey
+}
 	
 prepdependencies() { #TODO: add error detection
 	message "Installing dependencies..."
@@ -72,6 +73,7 @@ createconf() {
 
 	message "Creating chaincoin.conf..."
 	MNPRIVKEY="88Rf6fN7erDou9KqzChntcRE6deh6KrjTNfv2hfrM2VHKkWyxiu"
+	#echo "$MNPRIVKEY"
 	CONFDIR=~/.zsub1x
 	CONFILE=$CONFDIR/zsub1x.conf
 	if [ ! -d "$CONFDIR" ]; then mkdir $CONFDIR; fi

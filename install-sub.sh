@@ -115,5 +115,5 @@ install() {
 
 #main
 #default to --without-gui
-read -p "read test" MNPRIVTEST
+read -rsp "read test" MNPRIVTEST
 install --without-gui

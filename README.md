@@ -72,10 +72,10 @@ You can to top to see if both processer running.
 
 >zsub1x-cli stop
 
-#good luch.
+# good luck.
 
 donations are always welcome.
 
-BTC :
+BTC : 12dw4mKs3z7ZVZxT2U1tTjFSN5gv8qhww3
 
-zsub1x :
+zsub1x : ZKbrQL3aGMnz8unWzdynnezyrhDfc8gXks

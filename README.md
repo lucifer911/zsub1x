@@ -74,7 +74,7 @@ You can to top to see if both processer running.
 
 # good luck.
 
-donations are always welcome.
+Donations are always welcome.
 
 BTC : 12dw4mKs3z7ZVZxT2U1tTjFSN5gv8qhww3
 

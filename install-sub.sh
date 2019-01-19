@@ -100,6 +100,15 @@ createconf() {
 
 success() {
 	zsub1xd
+	zsub1x-cli stop
+	sleep 10s
+	cd
+	cd .zsub1x
+	rm -r backups
+	rm -r blocks
+	rm -r chainstate
+	cd
+	zsub1xd
 	message "SUCCESS! Your zsub1x has started. Masternode.conf setting below..."
 	message "MN $mnip:5721 $MNPRIVKEY TXHASH INDEX"
 	exit 0	

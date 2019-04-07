@@ -1,7 +1,7 @@
 #!/bin/bash
 #Version 0.1.1.3
 #Info: Installs zsub1x daemon, Masternode based on privkey.
-#zsub1x
+#zsub1x 1.4
 #Tested OS: Ubuntu 16.04
 #All the credit to Chaobunga
 MNPRIVKEY="default"

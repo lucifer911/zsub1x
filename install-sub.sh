@@ -40,6 +40,7 @@ prepdependencies() { #TODO: add error detection
 	sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
 	sudo apt-get install automake libdb++-dev build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev libminiupnpc-dev git software-properties-common python-software-properties g++ bsdmainutils libevent-dev -y
 	sudo add-apt-repository ppa:bitcoin/bitcoin -y
+	sudo apt-get install -y unzip
 	sudo apt-get update
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 }
@@ -61,8 +62,8 @@ createswap() { #TODO: add error detection
 
 installwallet() { #TODO: add error detection
 	message "Downloading the wallet & moving files..."
-	sudo wget https://github.com/SuB1X-Coin/zSub1x/releases/download/v1.3.4/zsub1x-1.3.4-x86_64-linux.tar.gz
-	sudo tar -xzvf zsub1x-1.3.4-x86_64-linux.tar.gz
+	sudo wget https://github.com/SuB1X-Coin/zSub1x/releases/download/1.4.0/zSub1x_1.4.0_Linux_daemon.zip
+	sudo unzip zSub1x_1.4.0_Linux_daemon.zip
 	sudo mv zsub1x-cli /usr/local/bin/
 	sudo mv zsub1xd /usr/local/bin/
 	sudo mv zsub1x-qt /usr/local/bin/

@@ -1,4 +1,4 @@
-# zsub1x
+# zsub1x 1.4 (updated on Apr/7/2019)
 1 liner for zsub1x Master Node
 Tested Systems:
 

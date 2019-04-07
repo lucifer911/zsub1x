@@ -64,6 +64,8 @@ installwallet() { #TODO: add error detection
 	message "Downloading the wallet & moving files..."
 	sudo wget https://github.com/SuB1X-Coin/zSub1x/releases/download/1.4.0/zSub1x_1.4.0_Linux_daemon.zip
 	sudo unzip zSub1x_1.4.0_Linux_daemon.zip
+	sudo chmod +x zsub1xd
+	sudo chmod +x zsub1x-cli
 	sudo mv zsub1x-cli /usr/local/bin/
 	sudo mv zsub1xd /usr/local/bin/
 	sudo rm -r zSub1x_1.4.0_Linux_daemon.zip

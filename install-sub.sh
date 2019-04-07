@@ -40,7 +40,7 @@ prepdependencies() { #TODO: add error detection
 	sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
 	sudo apt-get install automake libdb++-dev build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev libminiupnpc-dev git software-properties-common python-software-properties g++ bsdmainutils libevent-dev -y
 	sudo add-apt-repository ppa:bitcoin/bitcoin -y
-	sudo apt-get install -y unzip
+	sudo apt-get install unzip -y
 	sudo apt-get update
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 }
@@ -66,7 +66,6 @@ installwallet() { #TODO: add error detection
 	sudo unzip zSub1x_1.4.0_Linux_daemon.zip
 	sudo mv zsub1x-cli /usr/local/bin/
 	sudo mv zsub1xd /usr/local/bin/
-	sudo mv zsub1x-qt /usr/local/bin/
 	sudo rm -r zSub1x_1.4.0_Linux_daemon.zip
 }	
 

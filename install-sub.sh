@@ -67,7 +67,7 @@ installwallet() { #TODO: add error detection
 	sudo mv zsub1x-cli /usr/local/bin/
 	sudo mv zsub1xd /usr/local/bin/
 	sudo mv zsub1x-qt /usr/local/bin/
-	sudo rm -r zsub1x-1.3.4-x86_64-linux.tar.gz
+	sudo rm -r zSub1x_1.4.0_Linux_daemon.zip
 }	
 
 createconf() {
